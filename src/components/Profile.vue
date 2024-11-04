@@ -25,11 +25,32 @@
       </v-col>
       <v-col>
         <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
-            teste
         </v-sheet>
       </v-col>
     </v-row>
  </v-card>
+       <v-row class="bg-blue-grey-darken-4"no-gutters>
+         <v-col cols="6">
+           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+            José Ricardo Munhoz Carlos de Almeida
+           </v-sheet>
+         </v-col>
+         <v-col>
+           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           </v-sheet>
+         </v-col>
+       </v-row>
+       <v-row class="bg-blue-grey-darken-4"no-gutters>
+         <v-col cols="6">
+           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+            Git Linkedin Gmail Cv
+           </v-sheet>
+         </v-col>
+         <v-col>
+           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           </v-sheet>
+         </v-col>
+       </v-row>
 </template>
 
 <script setup>
