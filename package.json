@@ -1,0 +1,30 @@
+{
+  "name": "teste",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "@vue/apollo-composable": "^4.2.1",
+    "@vue/apollo-option": "^4.2.0",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "graphql": "^15.9.0",
+    "graphql-tag": "^2.12.6",
+    "teste": "file:",
+    "vue": "^3.5.12",
+    "vuetify": "^3.7.3",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.10"
+  }
+}

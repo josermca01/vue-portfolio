@@ -1,0 +1,9 @@
+{
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue","src/**/*.ts"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
