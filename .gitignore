@@ -30,3 +30,6 @@ coverage
 *.tsbuildinfo
 
 .env
+
+src/assets/images/a.gif
+src/assets/images/b.jpg
