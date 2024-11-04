@@ -5,8 +5,8 @@ import * as directives from 'vuetify/directives'
 const myCustomLightTheme = {
   dark: false,
   colors: {
-    background: '#263238',
-    surface: '#263238',
+    background: '#121212',
+    surface: '#121212',
     'surface-bright': '#263238',
     'surface-light': '#EEEEEE',
     'surface-variant': '#424242',
@@ -19,6 +19,7 @@ const myCustomLightTheme = {
     info: '#2196F3',
     success: '#4CAF50',
     warning: '#FB8C00',
+    background2: '#282828',
   },
   variables: {
     'border-color': '#000000',

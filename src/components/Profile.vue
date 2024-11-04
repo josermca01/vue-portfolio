@@ -5,49 +5,49 @@
       src="src\assets\images\b.jpg"
       cover>
     </v-img>
-    <v-row class="bg-blue-grey-darken-4"no-gutters>
+    <v-row class=""no-gutters>
       <v-col cols="2">
-        <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+        <v-sheet class=" pa-2 ma-2">
         </v-sheet>
       </v-col>
       <v-col>
-        <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+        <v-sheet class=" pa-2 ma-2">
         </v-sheet>
       </v-col>
     </v-row>
-    <v-row class="bg-blue-grey-darken-4"no-gutters>
+    <v-row class=""no-gutters>
       <v-col cols="2">
-        <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+        <v-sheet class=" pa-2 ma-2">
         <v-avatar border="background opacity-100 xl " class="ml-8 position-absolute bottom-0 left-0" image="src\assets\images\a.gif"
             :size="height">
         </v-avatar>
         </v-sheet>
       </v-col>
       <v-col>
-        <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+        <v-sheet class=" pa-2 ma-2">
         </v-sheet>
       </v-col>
     </v-row>
  </v-card>
-       <v-row class="bg-blue-grey-darken-4"no-gutters>
+       <v-row class=""no-gutters>
          <v-col cols="6">
-           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           <v-sheet class=" pa-2 ma-2">
             José Ricardo Munhoz Carlos de Almeida
            </v-sheet>
          </v-col>
          <v-col>
-           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           <v-sheet class=" pa-2 ma-2">
            </v-sheet>
          </v-col>
        </v-row>
-       <v-row class="bg-blue-grey-darken-4"no-gutters>
+       <v-row class=""no-gutters>
          <v-col cols="6">
-           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           <v-sheet class=" pa-2 ma-2">
             Git Linkedin Gmail Cv
            </v-sheet>
          </v-col>
          <v-col>
-           <v-sheet class="bg-blue-grey-darken-4 pa-2 ma-2">
+           <v-sheet class=" pa-2 ma-2">
            </v-sheet>
          </v-col>
        </v-row>
