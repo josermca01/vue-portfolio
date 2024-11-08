@@ -1,29 +1,63 @@
 <template>
-   <v-card color="background2" class=" ma-8">
-      <v-card-title color="background2">
-         <v-row class="" no-gutters>
-            <v-col cols="3">
-               <v-sheet color="background2" class="pa-2 ma-2">
-                  Sobre
-               </v-sheet>
-            </v-col>
-            <v-col cols="3">
-               <v-sheet color="background2" class="pa-2 ma-2">
-                  Projetos
-               </v-sheet>
-            </v-col>
-            <v-col cols="3">
-               <v-sheet color="background2" class="pa-2 ma-2">
-               </v-sheet>
-            </v-col>
-            <v-col cols="3">
-               <v-sheet color="background2" class="pa-2 ma-2">
-               </v-sheet>
-            </v-col>
-         </v-row>
-      </v-card-title>
-   </v-card>
+   <v-sheet class="ma-4" color="background2" elevation="3" rounded="lg">
+    <v-tabs
+      v-model="tab"
+      :items="tabs"
+      align-tabs="start"
+      color="white"
+      height="60"
+      slider-color="highlight"
+    >
+      <template v-slot:tab="{ item }">
+        <v-tab
+          :prepend-icon="item.icon"
+          :text="item.text"
+          :value="item.value"
+          class="text-none"
+        ></v-tab>
+      </template>
+
+      <template v-slot:item="{ item }">
+        <v-tabs-window-item :value="item.value" class="pa-4">
+         <v-card color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
+         <v-card color="background2" v-if="item.text=='Projetos'">teste do Projetos</v-card>
+         <v-card color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
+         <v-card color="background2" v-if="item.text=='Certificados'">teste do Certificados</v-card>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!
+        </v-tabs-window-item>
+      </template>
+    </v-tabs>
+  </v-sheet>
 </template>
 
+<script>
+export default {
+   data: () => ({
+      tab: 'tab-1',
+      tabs: [
+        {
+          text: 'Sobre',
+          value: 'tab-1',
+        },
+        {
+          text: 'Projetos',
+          value: 'tab-2',
+        },
+        {
+          text: 'Experiências',
+          value: 'tab-3',
+        },
+        {
+          text: 'Certificados',
+          value: 'tab-4',
+        },
+      ],
+    }),
+}
+</script>
 <script setup>
+import { computed } from 'vue'
+import reposList from '../requests/index'
+const items = ["Sobre", "Projetos", "Certificados"]
+const repos = computed(() => reposList?.viewer.pinnedItems.edges.map(edge => edge.node) || [])
 </script>

@@ -20,6 +20,7 @@ const myCustomLightTheme = {
     success: '#4CAF50',
     warning: '#FB8C00',
     background2: '#282828',
+    highlight:'#FAFAFA'
   },
   variables: {
     'border-color': '#000000',
