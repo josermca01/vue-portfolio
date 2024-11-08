@@ -30,14 +30,10 @@
   <v-row class="" no-gutters>
     <v-col class="d-flex pl-8" :cols="colsNums">
       <v-sheet class="d-flex">
-        <div class="ma-2 pa-2" v-for="item in social" :key="item.link"
-        >
-        <v-btn class="v-btn-socials"
-            variant="outlined"
-            :icon="item.icon"  :href="item.link"  target="_blank" rel="noopener noreferrer"
-          >
-          </v-btn>
-        </div>
+        <div class="ma-2 pa-2" v-for="item in social" :key="item.link">
+          <a class="btn" :href="item.link" target="_blank"
+          rel="noopener noreferrer"><v-icon :icon="item.icon"></v-icon></a>
+          </div>
       </v-sheet>
     </v-col>
     <v-col>
@@ -53,17 +49,17 @@ import { useTheme } from 'vuetify';
 import { computed } from 'vue'
 import { useDisplay } from 'vuetify'
 const social = [{
-  icon:"mdi-github",
-  link:"https://github.com/josermca01"
-},{
-  icon:"mdi-linkedin",
-  link:"https://www.linkedin.com/in/jose-ricardo-munhoz-456596217/"
-},{
-  icon:"mdi-gmail",
-  link:"mailto:josermca01@gmail.com"
-},{
-  icon:"mdi-download-box-outline",
-  link:"https://github.com/josermca01"
+  icon: "mdi-github",
+  link: "https://github.com/josermca01"
+}, {
+  icon: "mdi-linkedin",
+  link: "https://www.linkedin.com/in/jose-ricardo-munhoz-456596217/"
+}, {
+  icon: "mdi-gmail",
+  link: "mailto:josermca01@gmail.com"
+}, {
+  icon: "mdi-download-box-outline",
+  link: "https://github.com/josermca01"
 },]
 const theme = useTheme()
 const { name } = useDisplay()
@@ -96,12 +92,18 @@ const colsNums = computed(() => {
 </script>
 
 <style scoped>
-.v-btn-socials:hover {
-    transition: opacity 1;
+.btn{
+  background-color: "background";
+  border: solid white 1px;
+  color: white;
+  padding: 0.7rem;
+  text-decoration: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 45%;
+  transition: 0.7s;
 }
-
-.v-btn-socials {
-    opacity: 0.6;
+.btn:hover{
+  opacity: 90%;
 }
-
 </style>
