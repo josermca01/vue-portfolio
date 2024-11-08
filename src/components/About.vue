@@ -20,7 +20,7 @@
       <template v-slot:item="{ item }">
         <v-tabs-window-item :value="item.value" class="pa-4">
          <v-card color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
-         <v-card color="background2" v-if="item.text=='Projetos'">teste do Projetos</v-card>
+         <v-card color="background2" v-if="item.text=='Projetos'"><ProjectsCard/></v-card>
          <v-card color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
          <v-card color="background2" v-if="item.text=='Certificados'">teste do Certificados</v-card>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!
@@ -56,6 +56,7 @@ export default {
 }
 </script>
 <script setup>
+import ProjectsCard from './ProjectsCard.vue';
 import { computed } from 'vue'
 import reposList from '../requests/index'
 const items = ["Sobre", "Projetos", "Certificados"]
