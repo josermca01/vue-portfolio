@@ -1,4 +1,6 @@
 import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css'
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
@@ -45,6 +47,9 @@ const myCustomLightTheme = {
 export default createVuetify({
     components,
     directives,
+    icons: {
+      defaultSet: 'mdi', // This is already the default value - only for display purposes
+    },
   theme: {
     defaultTheme: 'myCustomLightTheme',
     themes: {
@@ -54,7 +59,7 @@ export default createVuetify({
     mobileBreakpoint: 'sm',
     thresholds: {
       xs: 0,
-      sm: 340,
+      sm: 361,
       md: 750,
       lg: 800,
       xl: 1280,

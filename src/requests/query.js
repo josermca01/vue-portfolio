@@ -9,6 +9,7 @@ export default `{
             name
             url
             stargazerCount
+            description
             languages(first:3){
               nodes{
                 name

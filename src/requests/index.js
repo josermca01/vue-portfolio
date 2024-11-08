@@ -14,7 +14,19 @@ const repos = await axios.post(
       },
     }
 ).then((res)=>{
-    reposList = res.data.data
-  })
+  for (const element of res.data.data.viewer.pinnedItems.edges) {
+    const arrayAux=[];
+    for (const lang of element.node.languages.nodes) {
+      arrayAux.push(lang.name);
+    }
+    reposList.push({
+      name: element.node.name,
+      description: element.node.description,
+      stargazerCount: element.node.stargazerCount,
+      html_url: element.node.url,
+      language: arrayAux,
+    });
+    console.log(reposList);
+  }})
   .catch(err=>{console.log(err)})
 export default reposList
