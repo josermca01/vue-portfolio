@@ -7,10 +7,10 @@
       color="white"
       height="60"
       slider-color="highlight"
+      show-arrows
     >
       <template v-slot:tab="{ item }">
         <v-tab
-          :prepend-icon="item.icon"
           :text="item.text"
           :value="item.value"
           class="text-none"

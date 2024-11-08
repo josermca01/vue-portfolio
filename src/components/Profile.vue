@@ -18,23 +18,23 @@
   </v-card>
   <v-row class="" no-gutters>
     <v-col :cols="colsNums">
-      <v-sheet class=" pa-2 ma-2">
+      <v-sheet class=" pa-2 ">
         José Ricardo Munhoz Carlos de Almeida
       </v-sheet>
     </v-col>
     <v-col>
-      <v-sheet class=" pa-2 ma-2">
+      <v-sheet class=" pa-2 ">
       </v-sheet>
     </v-col>
   </v-row>
   <v-row class="" no-gutters>
     <v-col :cols="colsNums">
-      <v-sheet class=" pa-2 ma-2">
+      <v-sheet class=" pa-2 ">
         Git Linkedin Gmail Cv
       </v-sheet>
     </v-col>
     <v-col>
-      <v-sheet class=" pa-2 ma-2">
+      <v-sheet class=" pa-2 ">
       </v-sheet>
     </v-col>
   </v-row>

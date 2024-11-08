@@ -26,7 +26,6 @@ const repos = await axios.post(
       html_url: element.node.url,
       language: arrayAux,
     });
-    console.log(reposList);
   }})
   .catch(err=>{console.log(err)})
 export default reposList
