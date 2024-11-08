@@ -25,8 +25,8 @@ const myCustomLightTheme = {
     highlight:'#FAFAFA'
   },
   variables: {
-    'border-color': '#000000',
-    'border-opacity': 0.12,
+    'border-color': '#282828',
+    'border-opacity': 0,
     'high-emphasis-opacity': 0.87,
     'medium-emphasis-opacity': 0.60,
     'disabled-opacity': 0.38,
@@ -48,7 +48,7 @@ export default createVuetify({
     components,
     directives,
     icons: {
-      defaultSet: 'mdi', // This is already the default value - only for display purposes
+      defaultSet: 'mdi'
     },
   theme: {
     defaultTheme: 'myCustomLightTheme',

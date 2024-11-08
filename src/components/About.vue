@@ -19,10 +19,10 @@
 
       <template v-slot:item="{ item }">
         <v-tabs-window-item :value="item.value" class="pa-4">
-         <v-card color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
-         <v-card color="background2" v-if="item.text=='Projetos'"><ProjectsCard/></v-card>
-         <v-card color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
-         <v-card color="background2" v-if="item.text=='Certificados'">teste do Certificados</v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Projetos'"><ProjectsCard/></v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Certificados'">teste do Certificados</v-card>
          </v-tabs-window-item>
       </template>
     </v-tabs>

@@ -1,23 +1,60 @@
 <template>
-    <v-row>
-        <v-col class="rounded flex-grow-0 flex-shrink-1" :cols="colsNums" style="min-width: 100px;" v-for="repo in repos">
-            <v-sheet class=" rounded ma-2 pa-2">
-                <v-row class="ma-2 pa-2">{{ repo.name }}</v-row>
-                <v-row class="ma-2 pa-2"><v-col aling="start">{{ repo.description }}</v-col><v-col aling="end" cols="auto">
-                        <v-btn :href="repo.html_url" target="_blank" rel="noopener noreferrer" icon="mdi-open-in-new" size="large"></v-btn>
-                    </v-col></v-row>
-                <v-row class="ma-2 pa-2"><v-col aling="start">{{ repo.stargazerCount }}</v-col><v-col aling="end">
-                        <div :class="projectsTechs">
-                            <v-sheet class="ma-2" v-for="lang in repo.language">{{ lang }}
-                            </v-sheet>
-                        </div>
-                    </v-col>
-                </v-row>
-            </v-sheet>
-        </v-col>
+    <v-row class="fill-height no-gutters" justify="center">
+        <template v-for="(repo, i) in repos" :key="i">
+            <v-col cols="12" md="4">
+                <v-hover v-slot="{ isHovering, props }">
+                    <v-card :href="repo.html_url" target="_blank" rel="noopener noreferrer"
+                        :class="{ 'on-hover': isHovering }" :elevation="isHovering ? 12 : 2" v-bind="props">
+                        <v-card-title class="text-h6 text-white d-flex flex-column">
+                            <p class="mt-4">{{ repo.name }}</p>
+                            <div>
+                                <p class="ma-0 text-body-1 font-weight-bold">
+                                    {{ repo.description }}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-space-between">
+                                <p class="pa-2  text-caption font-weight-medium">
+                                    <v-icon icon="mdi-star-outline"></v-icon>
+                                    {{ repo.stargazerCount }}
+                                </p>
+                                <div class="d-flex">
+                                    <p v-for="lang in repo.language" class="pa-2 text-caption font-weight-medium">
+                                        {{ lang }}
+                                    </p>
+                                </div>
+                            </div>
+                        </v-card-title>
+                    </v-card>
+                </v-hover>
+            </v-col>
+        </template>
     </v-row>
-
 </template>
+<script>
+export default {
+    data: () => ({
+        icons: [{
+            name: "Java",
+            img: "mdi-language-java"
+        }, {
+            name: "JavaScript",
+            img: "mdi-language-javascript"
+        }, {
+            name: "TypeScript",
+            img: "mdi-language-typescript"
+        }, {
+            name: "Python",
+            img: "mdi-language-python"
+        }, {
+            name: "HTML",
+            img: "mdi-language-html5"
+        }, {
+            name: "CSS",
+            img: "mdi-language-css3"
+        }],
+    }),
+}
+</script>
 <script setup>
 import { computed } from 'vue'
 import reposList from '../requests/index'
@@ -49,3 +86,17 @@ const projectsTechs = computed(() => {
     return undefined
 })
 </script>
+
+<style scoped>
+.v-card {
+    transition: opacity .4s ease-in-out;
+}
+
+.v-card:not(.on-hover) {
+    opacity: 0.6;
+}
+
+.show-btns {
+    color: rgba(255, 255, 255, 1) !important;
+}
+</style>
