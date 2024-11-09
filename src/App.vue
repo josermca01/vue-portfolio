@@ -1,10 +1,10 @@
 <template>
   <Profile/>
-  <About/>
+  <Display/>
 </template>
 <script setup>
 import Profile from './components/Profile.vue';
-import About from './components/About.vue';
+import Display from './components/Display.vue';
 </script>
 <style scoped>
 </style>

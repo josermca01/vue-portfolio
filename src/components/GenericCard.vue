@@ -5,14 +5,14 @@
                 <a :href="info.html_url" target="_blank" rel="noopener noreferrer" class="btn bg-background">
                     <div class="bg-grey-darken-4 rounded h-100 w-100 pa-2 d-flex align-start flex-column">
 
-                        <p class="mt-4 ml-2">{{ info.name }}</p>
+                        <p class="mt-4 ml-2 font-weight-bold">{{ info.name }}</p>
                         <div v-if="info.description">
-                            <p class="ma-2 text-body-1 font-weight-bold wrap">
+                            <p class="ma-2 text-body-1 font-weight-light wrap">
                                 {{ info.description }}
                             </p>
                         </div>
                         <div v-else>
-                            <p class="ma-2 text-body-1 font-weight-bold opacity-0">
+                            <p class="ma-2 text-body-1 font-weight-light wrap opacity-0">
                                 .
                             </p>
                         </div>
@@ -73,58 +73,5 @@ const projectsTechs = computed(() => {
 </script>
 
 <style scoped>
-.btn {
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    border-radius: 3px;
-    display: inline-block;
-    opacity: 45%;
-    padding: 0.1rem;
-    transition: 0.7s;
-    position: relative;
-}
 
-.btn::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 45%, white);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    opacity: 0%;
-    border-radius: 3px;
-}
-
-.btn:hover {
-    opacity: 90%;
-    background-image: conic-gradient(from var(--angle), transparent 45%, white);
-    animation: 3s spin linear infinite;
-}
-
-.btn:hover::before {
-    filter: blur(1.5rem);
-    opacity: 0.5;
-    background-image: conic-gradient(from var(--angle), transparent 45%, white);
-    animation: 3s spin linear infinite;
-}
-
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-
-    to {
-        --angle: 360deg;
-    }
-}
 </style>

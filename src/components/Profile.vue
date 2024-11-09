@@ -1,24 +1,25 @@
 <template>
-  <v-card border="background opacity-100 xl" flat>
-    <v-img class="rounded-t-xl" height="350" src="src\assets\images\b.jpg" cover>
-    </v-img>
-    <v-row class="" no-gutters>
-      <v-col :cols="colsNums">
-        <v-sheet class=" pa-2 ma-2">
-          <v-avatar border="background opacity-100 xl" class="ml-8 position-absolute bottom-0 left-0"
-            image="src\assets\images\a.gif" :size="height">
-          </v-avatar>
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class=" pa-2 ma-2">
-        </v-sheet>
-      </v-col>
-    </v-row>
-  </v-card>
+  <v-sheet class="ma-4" color="background2" elevation="0" rounded="lg">
+    <v-card class="background rounded-0 elevation-0" >
+      <v-img class="rounded-t-xl" :height="heightBackground" src="src\assets\images\b.jpg" cover>
+      </v-img>
+      <v-row class="background" no-gutters>
+        <v-col :cols="colsNums">
+          <v-sheet class="background pa-2 ma-2">
+            <v-avatar border="background opacity-100 xl" class="position-absolute bottom-0 left-0"
+              image="src\assets\images\a.gif" :size="height">
+            </v-avatar>
+          </v-sheet>
+        </v-col>
+        <v-col>
+          <v-sheet class=" pa-2 ma-2">
+          </v-sheet>
+        </v-col>
+      </v-row>
+    </v-card>
   <v-row class="" no-gutters>
     <v-col :cols="colsNums">
-      <v-sheet class="pl-14 pa-2 text-h2">
+      <v-sheet :class="nameTitle">
         José Ricardo Munhoz
       </v-sheet>
     </v-col>
@@ -27,8 +28,8 @@
       </v-sheet>
     </v-col>
   </v-row>
-  <v-row class="" no-gutters>
-    <v-col class="d-flex pl-8" :cols="colsNums">
+  <v-row class="bg-background" no-gutters>
+    <v-col class="d-flex" :cols="colsNums">
       <v-sheet class="d-flex">
         <div :class="socialSpace" v-for="item in social" :key="item.link">
           <a v-if="item.icon=='mdi-download-box-outline'":href="item.link" download class="btn"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
@@ -42,6 +43,8 @@
       </v-sheet>
     </v-col>
   </v-row>
+  </v-sheet>
+  
 </template>
 
 <script setup>
@@ -64,6 +67,19 @@ const social = [{
 },]
 const theme = useTheme()
 const { name } = useDisplay()
+const heightBackground = computed(() => {
+  // name is reactive and
+  // must use .value
+  switch (name.value) {
+    case 'xs': return 200
+    case 'sm': return 250
+    case 'md': return 270
+    case 'lg': return 350
+    case 'xl': return 350
+    case 'xxl': return 350
+  }
+  return undefined
+})
 const height = computed(() => {
   // name is reactive and
   // must use .value
@@ -81,12 +97,25 @@ const socialSpace = computed(() => {
   // name is reactive and
   // must use .value
   switch (name.value) {
-    case 'xs': return "ma-1 pa-1"
-    case 'sm': return "ma-1 pa-2"
-    case 'md': return "ma-2 pa-2"
-    case 'lg': return "ma-2 pa-2"
-    case 'xl': return "ma-2 pa-2"
-    case 'xxl': return "ma-2 pa-2"
+    case 'xs': return "pa-1"
+    case 'sm': return "pa-2"
+    case 'md': return "pa-2"
+    case 'lg': return "pa-2"
+    case 'xl': return "pa-2"
+    case 'xxl': return "pa-2"
+  }
+  return undefined
+})
+const nameTitle = computed(() => {
+  // name is reactive and
+  // must use .value
+  switch (name.value) {
+    case 'xs': return "pa-4 text-h4"
+    case 'sm': return "pa-4 text-h4"
+    case 'md': return "pa-4 text-h3"
+    case 'lg': return "pa-4 text-h2"
+    case 'xl': return "pa-4 text-h2"
+    case 'xxl': return "pa-4 text-h2"
   }
   return undefined
 })
@@ -112,51 +141,9 @@ const colsNums = computed(() => {
   position: relative;
 }
 .btn{
-  background-color: "background";
-  color: white;
-  text-decoration: none;
   border-radius: 50%;
-  display: inline-block;
-  opacity: 45%;
-  padding: 0.1rem;
-  transition: 0.7s;
-  position: relative;
 }
 .btn::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle),transparent 45%,white);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  opacity: 0%;
   border-radius: 50%;
-}
-.btn:hover{
-  opacity: 90%;
-  background-image: conic-gradient(from var(--angle),transparent 45%,white);
-  animation: 3s spin linear infinite;
-}
-.btn:hover::before{
-  filter: blur(1.5rem);
-  opacity: 0.9;
-  background-image: conic-gradient(from var(--angle),transparent 45%,white);
-  animation: 3s spin linear infinite;
-}
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes spin{
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
 }
 </style>

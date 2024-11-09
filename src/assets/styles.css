@@ -1,3 +1,55 @@
 .basicBg{
     background-color: #121212 ;
 }
+
+.btn {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 45%;
+    padding: 0.1rem;
+    transition: 0.7s;
+    position: relative;
+    animation: 3s spin linear infinite;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 45%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    opacity: 0%;
+    animation: 3s spin linear infinite;
+}
+
+.btn:hover {
+    opacity: 90%;
+    background-image: conic-gradient(from var(--angle), transparent 45%, white);
+}
+
+.btn:hover::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+    background-image: conic-gradient(from var(--angle), transparent 45%, white);
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
