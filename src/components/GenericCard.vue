@@ -7,7 +7,7 @@
 
                         <p class="mt-4 ml-2">{{ info.name }}</p>
                         <div v-if="info.description">
-                            <p class="ma-2 text-body-1 font-weight-bold">
+                            <p class="ma-2 text-body-1 font-weight-bold wrap">
                                 {{ info.description }}
                             </p>
                         </div>
@@ -16,12 +16,14 @@
                                 .
                             </p>
                         </div>
-                        <div class="d-flex align-self-end">
-                            <p v-if="info.stargazerCount" class="pa-2 text-caption font-weight-medium">
-                                <v-icon icon="mdi-star-outline"></v-icon>
-                                {{ info.stargazerCount }}
-                            </p>
-                            <div v-if="info.language" class="d-flex align-self-end">
+                        <div class="d-flex justify-space-between w-100">
+                            <div class="d-flex align-center">
+                                <p v-if="info.stargazerCount" class="pa-2 text-caption font-weight-medium">
+                                    <v-icon icon="mdi-star-outline"></v-icon>
+                                    {{ info.stargazerCount }}
+                                </p>
+                            </div>
+                            <div v-if="info.language" :class="projectsTechs">
                                 <p v-for="lang in info.language" class="pa-2 text-caption font-weight-medium">
                                     {{ lang }}
                                 </p>
@@ -61,7 +63,7 @@ const projectsTechs = computed(() => {
     // must use .value
     switch (name.value) {
         case 'xs': return "d-flex flex-column"
-        case 'sm': return "d-flex flex-row-reverse md-flex-column"
+        case 'sm': return "d-flex flex-column"
         case 'md': return "d-flex flex-row-reverse md-flex-column"
         case 'lg': return "d-flex flex-row-reverse md-flex-column"
         case 'xl': return "d-flex flex-row-reverse md-flex-column"

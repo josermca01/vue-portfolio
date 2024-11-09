@@ -60,7 +60,7 @@ export default createVuetify({
     thresholds: {
       xs: 0,
       sm: 361,
-      md: 750,
+      md: 520,
       lg: 800,
       xl: 1280,
     },

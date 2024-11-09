@@ -22,7 +22,7 @@
          <v-card variant="flat" color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
          <v-card variant="flat" color="background2" v-if="item.text=='Projetos'"><ProjectsCard/></v-card>
          <v-card variant="flat" color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
-         <v-card variant="flat" color="background2" v-if="item.text=='Certificados'">teste do Certificados</v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Certificados'"><Certificates/></v-card>
          </v-tabs-window-item>
       </template>
     </v-tabs>
@@ -55,6 +55,7 @@ export default {
 }
 </script>
 <script setup>
+import Certificates from './Certificates.vue';
 import ProjectsCard from './ProjectsCard.vue';
 import { computed } from 'vue'
 import reposList from '../requests/index'

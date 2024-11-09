@@ -18,8 +18,8 @@
   </v-card>
   <v-row class="" no-gutters>
     <v-col :cols="colsNums">
-      <v-sheet class=" pa-2 ">
-        José Ricardo Munhoz Carlos de Almeida
+      <v-sheet class="pl-14 pa-2 text-h2">
+        José Ricardo Munhoz
       </v-sheet>
     </v-col>
     <v-col>
@@ -31,7 +31,8 @@
     <v-col class="d-flex pl-8" :cols="colsNums">
       <v-sheet class="d-flex">
         <div :class="socialSpace" v-for="item in social" :key="item.link">
-          <a class="btn" :href="item.link" target="_blank"
+          <a v-if="item.icon=='mdi-download-box-outline'":href="item.link" download class="btn"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
+          <a v-else class="btn" :href="item.link" target="_blank"
           rel="noopener noreferrer"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
           </div>
       </v-sheet>
@@ -59,7 +60,7 @@ const social = [{
   link: "mailto:josermca01@gmail.com"
 }, {
   icon: "mdi-download-box-outline",
-  link: "https://github.com/josermca01"
+  link: "src/assets/documents/José Ricardo Munhoz Carlos de Almeida.pdf"
 },]
 const theme = useTheme()
 const { name } = useDisplay()
@@ -135,13 +136,13 @@ const colsNums = computed(() => {
   border-radius: 50%;
 }
 .btn:hover{
-  opacity: 45%;
+  opacity: 90%;
   background-image: conic-gradient(from var(--angle),transparent 45%,white);
   animation: 3s spin linear infinite;
 }
 .btn:hover::before{
   filter: blur(1.5rem);
-  opacity: 0.5;
+  opacity: 0.9;
   background-image: conic-gradient(from var(--angle),transparent 45%,white);
   animation: 3s spin linear infinite;
 }
