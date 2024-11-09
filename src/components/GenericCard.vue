@@ -1,37 +1,48 @@
 <template>
-    <GenericCard :infos="repos"/>
+    <v-row class="fill-height no-gutters" justify="center">
+        <template v-for="(info, i) in infos" :key="i">
+            <v-col cols="12" md="4">
+                <a :href="info.html_url" target="_blank" rel="noopener noreferrer" class="btn bg-background">
+                    <div class="bg-grey-darken-4 rounded h-100 w-100 pa-2 d-flex align-start flex-column">
+
+                        <p class="mt-4 ml-2">{{ info.name }}</p>
+                        <div v-if="info.description">
+                            <p class="ma-2 text-body-1 font-weight-bold">
+                                {{ info.description }}
+                            </p>
+                        </div>
+                        <div v-else>
+                            <p class="ma-2 text-body-1 font-weight-bold opacity-0">
+                                .
+                            </p>
+                        </div>
+                        <div class="d-flex align-self-end">
+                            <p v-if="info.stargazerCount" class="pa-2 text-caption font-weight-medium">
+                                <v-icon icon="mdi-star-outline"></v-icon>
+                                {{ info.stargazerCount }}
+                            </p>
+                            <div v-if="info.language" class="d-flex align-self-end">
+                                <p v-for="lang in info.language" class="pa-2 text-caption font-weight-medium">
+                                    {{ lang }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </v-col>
+        </template>
+    </v-row>
 </template>
 <script>
 export default {
-    data: () => ({
-        icons: [{
-            name: "Java",
-            img: "mdi-language-java"
-        }, {
-            name: "JavaScript",
-            img: "mdi-language-javascript"
-        }, {
-            name: "TypeScript",
-            img: "mdi-language-typescript"
-        }, {
-            name: "Python",
-            img: "mdi-language-python"
-        }, {
-            name: "HTML",
-            img: "mdi-language-html5"
-        }, {
-            name: "CSS",
-            img: "mdi-language-css3"
-        }],
-    }),
+    props: {
+    infos: { type:Object }
+  }
 }
 </script>
 <script setup>
-import GenericCard from './GenericCard.vue';
 import { computed } from 'vue'
-import reposList from '../requests/index'
 import { useDisplay } from 'vuetify'
-const repos = computed(() => reposList?.map(repo => repo) || [])
 const { name } = useDisplay()
 const colsNums = computed(() => {
     // name is reactive and

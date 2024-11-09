@@ -1,6 +1,6 @@
 <template>
-  <v-card flat>
-    <v-img height="350" src="src\assets\images\b.jpg" cover>
+  <v-card border="background opacity-100 xl" flat>
+    <v-img class="rounded-t-xl" height="350" src="src\assets\images\b.jpg" cover>
     </v-img>
     <v-row class="" no-gutters>
       <v-col :cols="colsNums">
@@ -30,7 +30,7 @@
   <v-row class="" no-gutters>
     <v-col class="d-flex pl-8" :cols="colsNums">
       <v-sheet class="d-flex">
-        <div class="ma-2 pa-2" v-for="item in social" :key="item.link">
+        <div :class="socialSpace" v-for="item in social" :key="item.link">
           <a class="btn" :href="item.link" target="_blank"
           rel="noopener noreferrer"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
           </div>
@@ -72,7 +72,20 @@ const height = computed(() => {
     case 'md': return 170
     case 'lg': return 200
     case 'xl': return 250
-    case 'xxl': return 1200
+    case 'xxl': return 300
+  }
+  return undefined
+})
+const socialSpace = computed(() => {
+  // name is reactive and
+  // must use .value
+  switch (name.value) {
+    case 'xs': return "ma-1 pa-1"
+    case 'sm': return "ma-1 pa-2"
+    case 'md': return "ma-2 pa-2"
+    case 'lg': return "ma-2 pa-2"
+    case 'xl': return "ma-2 pa-2"
+    case 'xxl': return "ma-2 pa-2"
   }
   return undefined
 })
