@@ -19,7 +19,7 @@
 
       <template v-slot:item="{ item }">
         <v-tabs-window-item :value="item.value" class="pa-4">
-         <v-card variant="flat" color="background2" v-if="item.text=='Sobre'">teste do sobre</v-card>
+         <v-card variant="flat" color="background2" v-if="item.text=='Sobre'"><About/></v-card>
          <v-card variant="flat" color="background2" v-if="item.text=='Projetos'"><ProjectsCard/></v-card>
          <v-card variant="flat" color="background2" v-if="item.text=='Experiências'">teste do Experiências</v-card>
          <v-card variant="flat" color="background2" v-if="item.text=='Certificados'"><Certificates/></v-card>
@@ -55,6 +55,7 @@ export default {
 }
 </script>
 <script setup>
+import About from './About.vue';
 import Certificates from './Certificates.vue';
 import ProjectsCard from './ProjectsCard.vue';
 import { computed } from 'vue'
