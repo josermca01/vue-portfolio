@@ -22,6 +22,7 @@ const myCustomLightTheme = {
     success: '#4CAF50',
     warning: '#FB8C00',
     background2: '#282828',
+    background3: '#383838',
     highlight:'#FAFAFA'
   },
   variables: {

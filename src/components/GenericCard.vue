@@ -1,7 +1,7 @@
 <template>
     <v-row class="ma-6 fill-height no-gutters" justify="center">
         <template v-for="(info, i) in infos" :key="i">
-            <v-col cols="12" md="4">
+            <v-col cols="12" sm="6" md="4">
                 <a :href="info.html_url" target="_blank" rel="noopener noreferrer" class="btn bg-background">
                     <div class="bg-grey-darken-4 rounded h-100 w-100 pa-2 d-flex align-start flex-column">
 
