@@ -32,9 +32,9 @@
     <v-col class="d-flex" :cols="colsNums">
       <v-sheet class="d-flex">
         <div :class="socialSpace" v-for="item in social" :key="item.link">
-          <a v-if="item.icon=='mdi-download-box-outline'":href="item.link" download class="btn"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
+          <a v-if="item.icon=='mdi-download-box-outline'":href="item.link" download class="btn"><v-icon class="bg-background2 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
           <a v-else class="btn" :href="item.link" target="_blank"
-          rel="noopener noreferrer"><v-icon class="bg-grey-darken-4 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
+          rel="noopener noreferrer"><v-icon class="bg-background2 rounded-circle pa-6" :icon="item.icon"></v-icon></a>
           </div>
       </v-sheet>
     </v-col>
