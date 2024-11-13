@@ -1,5 +1,5 @@
 <template>
-    <v-row class="ma-6 fill-height no-gutters" justify="center">
+    <v-row class="mt-2 fill-height no-gutters" justify="center">
         <template v-for="item in items" :key="item.name">
             <v-col cols="12" sm="4" md="3">
                 <a :href="item.url" target="_blank" rel="noopener noreferrer" class="btn">
