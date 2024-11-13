@@ -1,7 +1,7 @@
 import axios from 'axios'
 import query from './query'
 let reposList = []
-const repos = await axios.post(
+const repos = axios.post(
     `https://api.github.com/graphql`,
     {
       query
