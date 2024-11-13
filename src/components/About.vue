@@ -2,7 +2,7 @@
   <v-col cols="auto" class="d-flex flex-column pa-9">
     <div class="fill-width d-flex flex-column text-high-emphasis text-h5">Desenvolvedor de Software FullStack.
       <p class="mt-2 text-subtitle-1 text-medium-emphasis">
-      Atualmente estudando sobre <span class="text-indigo-accent-2">VueJS, Angular e React</span> no front-end e <span class="text-indigo-accent-2">Springboot, Laravel e Flask</span> no back-end.
+      Atualmente estudando sobre <span class="techstext">VueJS, Angular e React</span> no front-end e <span class="techstext">Springboot, Laravel e Flask</span> no back-end.
       Também possuo experiência com testes unitários usando JUnit e metodologias ágeis, como Kanban e Scrum. Estou
       sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para contribuir para o sucesso do
       projeto e da equipe!
@@ -100,5 +100,11 @@ techs.push(createTechs("CSS", "css"))
 
 #css {
   background-color: #0066ff;
+}
+.techstext{
+  color: #536DFE;
+}
+.techstext::selection{
+  color: #FFEE58;
 }
 </style>
