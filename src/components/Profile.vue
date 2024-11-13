@@ -12,7 +12,7 @@
         <v-col :cols="colsNums">
           <v-sheet class="background pa-2 ma-2">
             <v-avatar border="background opacity-100 xl" class="position-absolute bottom-0 left-0"
-              image="../src/assets/images/profile.jpg" :size="height">
+              :image="profile" :size="height">
             </v-avatar>
           </v-sheet>
         </v-col>
@@ -54,7 +54,7 @@
 
 <script setup>
 import { useTheme } from 'vuetify';
-
+import profile from '../assets/images/profile.jpg'
 import { computed } from 'vue'
 import { useDisplay } from 'vuetify'
 const social = [{
