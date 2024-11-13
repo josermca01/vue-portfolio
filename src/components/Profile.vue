@@ -55,6 +55,7 @@
 <script setup>
 import { useTheme } from 'vuetify';
 import profile from '../assets/images/profile.jpg'
+import curriculo from '../assets/documents/José Ricardo Munhoz Carlos de Almeida.pdf'
 import { computed } from 'vue'
 import { useDisplay } from 'vuetify'
 const social = [{
@@ -68,7 +69,7 @@ const social = [{
   link: "mailto:josermca01@gmail.com"
 }, {
   icon: "mdi-download-box-outline",
-  link: "src/assets/documents/José Ricardo Munhoz Carlos de Almeida.pdf"
+  link: curriculo
 },]
 
 const options = 
