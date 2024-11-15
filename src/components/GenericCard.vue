@@ -16,14 +16,14 @@
                                 .
                             </p>
                         </div>
-                        <div class="d-flex justify-space-between w-100">
+                        <div class="flex-wrap d-flex justify-space-between w-100">
                             <div class="d-flex align-center">
                                 <p v-if="info.stargazerCount" class="pa-2 text-caption font-weight-medium">
                                     <v-icon icon="mdi-star-outline"></v-icon>
                                     {{ info.stargazerCount }}
                                 </p>
                             </div>
-                            <div v-if="info.language" :class="projectsTechs">
+                            <div v-if="info.language" class="d-flex flex-wrap">
                                 <p v-for="lang in info.language" class="pa-2 text-caption font-weight-medium">
                                     {{ lang }}
                                 </p>
@@ -55,18 +55,6 @@ const colsNums = computed(() => {
         case 'md': return 6
         case 'lg': return 6
         case 'xl': return 4
-    }
-    return undefined
-})
-const projectsTechs = computed(() => {
-    // name is reactive and
-    // must use .value
-    switch (name.value) {
-        case 'xs': return "d-flex flex-column"
-        case 'sm': return "d-flex flex-column"
-        case 'md': return "d-flex flex-row-reverse md-flex-column"
-        case 'lg': return "d-flex flex-row-reverse md-flex-column"
-        case 'xl': return "d-flex flex-row-reverse md-flex-column"
     }
     return undefined
 })
