@@ -59,7 +59,7 @@ function createConections(icon, name, url) {
 }
 let items = []
 items.push(createConections("mdi-github", "GitHub", "https://github.com/josermca01"))
-items.push(createConections("mdi-linkedin", "Linkedin", "https://www.linkedin.com/in/jose-ricardo-munhoz-456596217/"))
+items.push(createConections("mdi-linkedin", "Linkedin", "https://www.linkedin.com/in/jose-ricardo-munhoz-almeida/"))
 items.push(createConections("mdi-gmail", "Gmail", "mailto:josermca01@gmail.com"))
 items.push(createConections("mdi-whatsapp", "WhatsApp", "https://api.whatsapp.com/send?phone=5515991511717"))
 formacoes.push(createFormacao("Facens", "Engenharia da Computação", "de 2019 a 2023"))
