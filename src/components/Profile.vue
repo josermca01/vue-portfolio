@@ -63,7 +63,7 @@ const social = [{
   link: "https://github.com/josermca01"
 }, {
   icon: "mdi-linkedin",
-  link: "https://www.linkedin.com/in/jose-ricardo-munhoz-456596217/"
+  link: "https://www.linkedin.com/in/jose-ricardo-munhoz-almeida/"
 }, {
   icon: "mdi-gmail",
   link: "mailto:josermca01@gmail.com"
